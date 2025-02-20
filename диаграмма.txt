@@ -1,0 +1,28 @@
+@startuml
+left to right direction
+
+actor "Менеджер" as Manager
+actor "Администратор" as Admin
+actor "Клиент" as Client
+
+rectangle "CRM-система" {
+    usecase "Создание клиента" as UC1
+    usecase "Управление продажами" as UC2
+    usecase "Отправка коммерческих предложений" as UC3
+    usecase "Создание задач" as UC4
+    usecase "Отчёты о продажах" as UC5
+}
+
+Manager --> UC1 : Создать клиента
+Manager --> UC2 : Управлять продажами
+Manager --> UC3 : Отправить коммерческое предложение
+Manager --> UC4 : Создать задачу
+Manager --> UC5 : Просмотреть отчёты
+
+Admin --> UC1 : Настроить поля клиента
+Admin --> UC2 : Настроить процесс продаж
+Admin --> UC3 : Настроить шаблоны предложений
+
+Client --> UC3 : Получить коммерческое предложение
+
+@enduml
